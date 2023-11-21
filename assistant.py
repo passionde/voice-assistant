@@ -51,6 +51,11 @@ class Assistant:
         else:
             self.__unknown_cmd()
 
+    def handle_one_command(self):
+        text = self.listen()
+        cmd = self.extract_command(text)
+        self.handle_command(cmd)
+
     def run(self):
         while True:
             print("Слушаю команду...")
